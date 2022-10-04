@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 
-export const HomeContainer = styled.div``
+export const HomeContainer = styled.div`
+  padding: 0 1.5rem;
+`
 
 export const ProfileContainer = styled.div`
   flex: 1;
-  max-width: 100%;
   display: flex;
+  position: relative;
   border-radius: 10px;
   margin-top: -5.5rem;
   padding: 2rem 2.5rem;
@@ -16,6 +18,16 @@ export const ProfileContainer = styled.div`
     width: 9.25rem;
     height: 9.25rem;
     border-radius: 8px;
+  }
+
+  @media (max-width: 568px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    > img {
+      margin-bottom: 2rem;
+    }
   }
 `
 
@@ -73,11 +85,25 @@ export const ProfileInfoContainer = styled.div`
     line-height: 1.6;
     color: ${({ theme }) => theme['ocean-blue-300']};
   }
+
+  @media (max-width: 568px) {
+    align-items: center;
+
+    > div {
+      &:first-child {
+        a {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+        }
+      }
+    }
+  }
 `
 
 export const ProfileInfoFooterContainer = styled.div`
   gap: 1.5rem;
-  margin-top: auto;
+  margin-top: 1rem;
 
   a {
     text-decoration: none;
@@ -96,5 +122,9 @@ export const ProfileInfoFooterContainer = styled.div`
     width: 1.125rem;
     height: 1.125rem;
     color: ${({ theme }) => theme['ocean-blue-500']};
+  }
+
+  @media (max-width: 568px) {
+    font-size: 0.8rem;
   }
 `

@@ -27,9 +27,22 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 90%;
     }
   }
+
   @media (max-width: 768px) {
     html {
       font-size: 87.5%;
+    }
+  }
+
+  @media (max-width: 620px) {
+    html {
+      font-size: 80%;
+    }
+  }
+
+  @media (max-width: 450px) {
+    html {
+      font-size: 75%;
     }
   }
 `
