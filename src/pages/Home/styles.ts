@@ -105,11 +105,6 @@ export const ProfileInfoFooterContainer = styled.div`
   gap: 1.5rem;
   margin-top: 1rem;
 
-  a {
-    text-decoration: none;
-  }
-
-  a,
   span {
     display: flex;
     align-items: center;
@@ -126,5 +121,42 @@ export const ProfileInfoFooterContainer = styled.div`
 
   @media (max-width: 568px) {
     font-size: 0.8rem;
+  }
+`
+
+export const SearchContainer = styled.div`
+  margin-top: 4.5rem;
+
+  > div {
+    gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    strong {
+      line-height: 1.6;
+      font-size: 1.125rem;
+      color: ${({ theme }) => theme['ocean-blue-200']};
+    }
+
+    span {
+      line-height: 1.6;
+      font-size: 0.875rem;
+      color: ${({ theme }) => theme['ocean-blue-400']};
+    }
+  }
+
+  input {
+    width: 100%;
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: ${(props) => props.theme['ocean-blue-100']};
+    background: ${({ theme }) => theme['dark-blue-900']};
+    border-radius: 6px;
+    border: 1px solid ${({ theme }) => theme['ocean-blue-600']};
+
+    &::placeholder {
+      color: ${(props) => props.theme['ocean-blue-500']};
+    }
   }
 `

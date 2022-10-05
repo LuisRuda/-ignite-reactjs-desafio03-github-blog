@@ -9,5 +9,7 @@ export const defaultTheme = {
   'ocean-blue-800': '#0B1B2B',
   'ocean-blue-900': '#071422',
 
+  'dark-blue-900': '#040F1A',
+
   'blue-500': '#3294F8',
 } as const

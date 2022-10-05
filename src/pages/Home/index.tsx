@@ -11,6 +11,7 @@ import {
   ProfileContainer,
   ProfileInfoContainer,
   ProfileInfoFooterContainer,
+  SearchContainer,
 } from './styles'
 
 export function Home() {
@@ -34,10 +35,10 @@ export function Home() {
             volutpat pulvinar vel mass.
           </p>
           <ProfileInfoFooterContainer>
-            <a href="#">
+            <span>
               <img src={gitHubIcon} alt="" />
               LuisRuda
-            </a>
+            </span>
             <span>
               <FontAwesomeIcon icon={faBuilding} /> Rocketseat
             </span>
@@ -47,6 +48,14 @@ export function Home() {
           </ProfileInfoFooterContainer>
         </ProfileInfoContainer>
       </ProfileContainer>
+
+      <SearchContainer>
+        <div>
+          <strong>Publicações</strong>
+          <span>6 publicações</span>
+        </div>
+        <input type="text" placeholder="Buscar conteúdo" />
+      </SearchContainer>
     </HomeContainer>
   )
 }
