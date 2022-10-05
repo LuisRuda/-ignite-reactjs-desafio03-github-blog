@@ -160,3 +160,57 @@ export const SearchContainer = styled.div`
     }
   }
 `
+
+export const PostsListContainer = styled.main`
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+`
+
+export const PostContainer = styled.a`
+  padding: 2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  background: ${({ theme }) => theme['ocean-blue-700']};
+  border: 2px solid transparent;
+
+  &:hover {
+    border: 2px solid ${({ theme }) => theme['ocean-blue-500']};
+  }
+
+  > div {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+
+    strong {
+      font-size: 1.25rem;
+      line-height: 1.6;
+    }
+
+    span {
+      float: right;
+      line-height: 1.6;
+      font-size: 0.875rem;
+      white-space: nowrap;
+      color: ${({ theme }) => theme['ocean-blue-400']};
+    }
+  }
+
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    line-height: 1.6;
+    color: ${({ theme }) => theme['ocean-blue-300']};
+  }
+`
