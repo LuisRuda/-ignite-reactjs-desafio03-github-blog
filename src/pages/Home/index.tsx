@@ -60,7 +60,7 @@ export function Home() {
       </SearchContainer>
 
       <PostsListContainer>
-        <PostContainer>
+        <PostContainer to="/post/1">
           <div>
             <strong>JavaScript data types and data structures</strong>
             <span>Há 1 dia</span>
@@ -79,7 +79,7 @@ export function Home() {
             a boolean
           </p>
         </PostContainer>
-        <PostContainer>
+        <PostContainer to="/post/2">
           <div>
             <strong>JavaScript data types and data structures</strong>
             <span>Há 1 dia</span>
@@ -98,7 +98,7 @@ export function Home() {
             a boolean
           </p>
         </PostContainer>
-        <PostContainer>
+        <PostContainer to="/post/3">
           <div>
             <strong>JavaScript data types and data structures</strong>
             <span>Há 1 dia</span>

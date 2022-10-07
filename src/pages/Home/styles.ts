@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
 
 export const HomeContainer = styled.div`
   padding: 0 1.5rem;
@@ -173,10 +174,11 @@ export const PostsListContainer = styled.main`
   }
 `
 
-export const PostContainer = styled.a`
+export const PostContainer = styled(NavLink)`
+  color: unset;
   padding: 2rem;
   border-radius: 10px;
-  cursor: pointer;
+  text-decoration: none;
   background: ${({ theme }) => theme['ocean-blue-700']};
   border: 2px solid transparent;
 
