@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faArrowUpRightFromSquare,
@@ -5,7 +6,9 @@ import {
   faUserGroup,
 } from '@fortawesome/free-solid-svg-icons'
 
+import { api } from '../../lib/axios'
 import { gitHubIcon } from '../../assets'
+import { IProfileData } from './types'
 import {
   HomeContainer,
   ProfileContainer,
@@ -17,35 +20,41 @@ import {
 } from './styles'
 
 export function Home() {
+  const [profileData, setProfileData] = useState<IProfileData>(
+    {} as IProfileData,
+  )
+
+  useEffect(() => {
+    api.get('users/LuisRuda').then((response) => {
+      console.log(response.data)
+      setProfileData(response.data)
+    })
+  }, [])
+
   return (
     <HomeContainer>
       <ProfileContainer>
-        <img
-          src="https://avatars.githubusercontent.com/u/35377905?v=4"
-          alt=""
-        />
+        <img src={profileData.avatar_url} alt={profileData.name} />
         <ProfileInfoContainer>
           <div>
-            <strong>Luis Paulo Ruda</strong>
-            <a href="#">
+            <strong>{profileData.name}</strong>
+            <a href={profileData.html_url} target="_blank" rel="noreferrer">
               GITHUB <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
             </a>
           </div>
-          <p>
-            Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-            viverra massa quam dignissim aenean malesuada suscipit. Nunc,
-            volutpat pulvinar vel mass.
-          </p>
+          <p>{profileData.bio}</p>
           <ProfileInfoFooterContainer>
             <span>
-              <img src={gitHubIcon} alt="" />
-              LuisRuda
+              <img src={gitHubIcon} alt={profileData.login} />
+              {profileData.login}
             </span>
             <span>
-              <FontAwesomeIcon icon={faBuilding} /> Rocketseat
+              <FontAwesomeIcon icon={faBuilding} />
+              {profileData.company}
             </span>
             <span>
-              <FontAwesomeIcon icon={faUserGroup} /> 32 seguidores
+              <FontAwesomeIcon icon={faUserGroup} />
+              {`${profileData.followers} seguidores`}
             </span>
           </ProfileInfoFooterContainer>
         </ProfileInfoContainer>
