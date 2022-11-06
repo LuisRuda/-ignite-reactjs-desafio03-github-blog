@@ -98,7 +98,7 @@ export function Home() {
 
       <PostsListContainer>
         {issues?.items?.map((issue) => (
-          <PostContainer to={`/post/${issue.id}`} key={issue.id}>
+          <PostContainer to={`/post/${issue.number}`} key={issue.id}>
             <div>
               <strong>{issue.title}</strong>
               <span>

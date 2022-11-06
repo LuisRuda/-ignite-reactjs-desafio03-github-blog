@@ -9,7 +9,7 @@ export function Router() {
     <Routes>
       <Route path="/" element={<DefaultLayout />}>
         <Route path="/" element={<Home />} />
-        <Route path="/post/:postid" element={<Post />} />
+        <Route path="/post/:postnumber" element={<Post />} />
       </Route>
     </Routes>
   )

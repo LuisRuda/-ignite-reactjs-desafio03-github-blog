@@ -13,6 +13,7 @@ interface IIssue {
   title: string
   body: string
   created_at: Date
+  number: number
 }
 
 export interface IIssuesData {

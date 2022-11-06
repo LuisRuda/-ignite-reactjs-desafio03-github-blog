@@ -82,3 +82,11 @@ export const InfoContainer = styled.div`
     font-size: 0.8rem;
   }
 `
+
+export const PostContent = styled.main`
+  padding: 2.5rem 2rem;
+
+  .line-break {
+    white-space: pre-wrap;
+  }
+`
