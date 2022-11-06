@@ -26,6 +26,7 @@ export function Home() {
     {} as IProfileData,
   )
   const [issues, setIssues] = useState<IIssuesData>({} as IIssuesData)
+  const [searchText, setSearchText] = useState('')
 
   useEffect(() => {
     api.get('users/LuisRuda').then((response) => {
@@ -50,8 +51,8 @@ export function Home() {
   }
 
   useEffect(() => {
-    loadRepos()
-  }, [])
+    loadRepos(searchText)
+  }, [searchText])
 
   return (
     <HomeContainer>
@@ -85,9 +86,14 @@ export function Home() {
       <SearchContainer>
         <div>
           <strong>Publicações</strong>
-          <span>{`${issues.total_count} publicações`}</span>
+          <span>{`${issues.total_count || 0} publicações`}</span>
         </div>
-        <input type="text" placeholder="Buscar conteúdo" />
+        <input
+          type="text"
+          placeholder="Buscar conteúdo"
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+        />
       </SearchContainer>
 
       <PostsListContainer>
