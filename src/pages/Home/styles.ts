@@ -187,9 +187,11 @@ export const PostContainer = styled(NavLink)`
   }
 
   > div {
-    display: flex;
     gap: 1rem;
+    display: flex;
     margin-bottom: 1.25rem;
+    align-items: flex-start;
+    justify-content: space-between;
 
     strong {
       font-size: 1.25rem;

@@ -7,3 +7,15 @@ export interface IProfileData {
   login: string
   name: string
 }
+
+interface IIssue {
+  id: string
+  title: string
+  body: string
+  created_at: Date
+}
+
+export interface IIssuesData {
+  items: IIssue[]
+  total_count: number
+}
